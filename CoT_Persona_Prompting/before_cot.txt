@@ -1,0 +1,67 @@
+========================================
+RUN 1: BEFORE CoT (STANDARD PROMPT)
+========================================
+
+**PROMPT USED**
+----------------
+"A small online shop sells custom mugs for $15 each. The fixed monthly
+operational cost is $300, and each mug costs $5 to produce. In August,
+they ran a discount promotion: if a customer bought 3 or more mugs,
+they got $5 off the total order. A total of 10 customers bought 3 mugs
+each, and 5 customers bought 1 mug each. Did the shop make a profit or
+a loss in August, and by how much?"
+
+No persona and no "think step-by-step" instruction was given. This is
+the raw problem statement, asked directly.
+
+**MODEL OUTPUT (ChatGPT)**
+---------------------------
+Let's calculate it step by step.
+
+1. Total mugs sold
+   - 10 customers x 3 mugs = 30 mugs
+   - 5 customers x 1 mug = 5 mugs
+   Total = 35 mugs
+
+2. Revenue
+   For the 10 customers buying 3 mugs:
+   - Normal price = 3 x $15 = $45
+   - Discount = $5
+   - Each customer pays = $40
+   - 10 x $40 = $400
+
+   For the 5 customers buying 1 mug:
+   - 5 x $15 = $75
+
+   Total revenue = $400 + $75 = $475
+
+3. Production cost
+   Each mug costs $5 to produce:
+   35 x $5 = $175
+
+4. Total costs
+   - Production cost = $175
+   - Fixed monthly cost = $300
+   Total cost = $475
+
+5. Profit/Loss
+   Profit = Revenue - Total Cost
+   $475 - $475 = $0
+
+ANSWER: The shop neither made a profit nor a loss in August.
+Profit/Loss = $0 (break-even).
+
+**OBSERVATIONS / EXPLANATION**
+-------------------------------
+- Even without an explicit persona or CoT instruction, ChatGPT still
+  produced a numbered breakdown here — but this is not guaranteed
+  behavior for a "standard" prompt; it can vary run to run and is
+  more likely to collapse steps or skip showing intermediate math on
+  less structured problems.
+- The main risk in this run type is that discount logic (per-order,
+  not per-mug) can get silently misapplied since there is no explicit
+  instruction to reason carefully before answering.
+- There is no persona framing (e.g. "financial analyst"), so the tone
+  stays generic rather than adopting a professional / audit-style
+  format.
+- Final answer reached: BREAK-EVEN ($0 profit/loss).

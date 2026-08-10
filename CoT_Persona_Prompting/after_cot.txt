@@ -1,0 +1,71 @@
+========================================
+RUN 2: AFTER CoT (PERSONA + CHAIN-OF-THOUGHT PROMPT)
+========================================
+
+**PROMPT USED**
+----------------
+"You are a senior financial analyst. Think step-by-step before
+answering. A small online shop sells custom mugs for $15 each. The
+fixed monthly operational cost is $300, and each mug costs $5 to
+produce. In August, they ran a discount promotion: if a customer
+bought 3 or more mugs, they got $5 off the total order. A total of 10
+customers bought 3 mugs each, and 5 customers bought 1 mug each. Did
+the shop make a profit or a loss in August, and by how much?"
+
+This time a PERSONA ("senior financial analyst") and an explicit
+CHAIN-OF-THOUGHT instruction ("think step-by-step before answering")
+were added on top of the same problem statement.
+
+**MODEL OUTPUT (ChatGPT)**
+---------------------------
+Using the figures given:
+
+Break-even quantity: Q* = F / (p - v) = 400 / (32 - 12) = 20
+(Q* is the break-even quantity where total revenue matches total cost)
+
+Where:
+   F = 400.0 $   (fixed-cost equivalent used in the model)
+   v = 12.0 $/unit
+   p = 32.0 $/unit
+
+1. Total mugs sold:
+   10 x 3 + 5 x 1 = 35 mugs
+
+2. Revenue:
+   - 10 customers x (3 x $15 - $5) = $40 -> $400
+   - 5 customers x $15 -> $75
+   - Total revenue = $475
+
+3. Production cost:
+   35 x $5 = $175
+
+4. Fixed cost: $300
+
+5. Total cost:
+   $175 + $300 = $475
+
+6. Profit:
+   $475 - $475 = $0
+
+ANSWER: The shop broke even in August. It made neither a profit nor a
+loss — $0.
+
+**OBSERVATIONS / EXPLANATION**
+-------------------------------
+- The persona instruction ("senior financial analyst") pushed the
+  model to add extra professional context beyond the base
+  calculation — in this case an interactive break-even chart and a
+  break-even quantity formula (Q* = F / (p - v)), showing Revenue vs.
+  Total Cost curves and marking the break-even point at Q* = 20 units.
+- The CoT instruction ("think step-by-step") kept the six calculation
+  steps clearly separated and labeled (Total mugs sold, Revenue,
+  Production cost, Fixed cost, Total cost, Profit), matching the
+  structure used in Run 1 but with added analytical depth (the
+  break-even framing).
+- This run demonstrates how persona + CoT together don't just improve
+  formatting — they can prompt the model to bring in relevant
+  financial concepts (like break-even analysis) that a plain prompt
+  is less likely to volunteer on its own.
+- Final answer reached: BREAK-EVEN ($0 profit/loss) — consistent with
+  Run 1, confirming the correctness of the math, but delivered with a
+  more rigorous, audit-friendly, and visually supported explanation.
